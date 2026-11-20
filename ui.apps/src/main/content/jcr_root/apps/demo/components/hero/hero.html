@@ -1,0 +1,28 @@
+
+<div data-sly-use.hero="com.adobe.aem.guides.demo.core.models.HeroModel">
+
+    <section class="hero">
+
+        <h1 data-sly-test="${hero.hasTitle}">
+            ${hero.title}
+        </h1>
+
+        <p data-sly-test="${hero.hasDescription}">
+            ${hero.description}
+        </p>
+
+        <div class="hero__buttons"
+             data-sly-list.button="${hero.buttons}">
+
+            <a href="${button.link @ context='uri'}"
+               class="hero__button">
+
+                ${button.text}
+
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
