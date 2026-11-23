@@ -1,0 +1,41 @@
+
+<div data-sly-use.card="com.adobe.aem.guides.demo.core.models.CardModel">
+
+    <article class="card-component">
+
+        <!-- Card Image -->
+        <div class="card-component__image"
+             data-sly-test="${card.hasImage}">
+
+            <img src="${card.imagePath}"
+                 alt="${card.title}"
+                 loading="lazy"/>
+        </div>
+
+        <!-- Card Content -->
+        <div class="card-component__content">
+
+            <h2 data-sly-test="${card.hasTitle}"
+                class="card-component__title">
+                ${card.title}
+            </h2>
+
+            <p data-sly-test="${card.hasDescription}"
+               class="card-component__description">
+                ${card.description}
+            </p>
+
+            <!-- CTA Button -->
+            <a data-sly-test="${card.hasCta}"
+               class="card-component__cta"
+               href="${card.ctaUrl}"
+               target="${card.openInNewTab ? '_blank' : '_self'}"
+               rel="${card.openInNewTab ? 'noopener noreferrer' : ''}">
+                ${card.ctaLabel}
+            </a>
+
+        </div>
+
+    </article>
+
+</div>
